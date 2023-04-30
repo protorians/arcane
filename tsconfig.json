@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "allowJs": false,
+        "moduleResolution":"node",
+        "removeComments": false,
+        "target": "es6",
+        "lib":["esnext"],
+        "module": "commonjs",
+        "declaration": false,
+        "declarationMap": false,
+        "inlineSourceMap": false,
+        "inlineSources": false,
+        "strict": true,
+        "esModuleInterop": true,
+        "sourceMap": false,
+        "preserveConstEnums": false,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "types": ["node"],
+
+        "noFallthroughCasesInSwitch": true,
+        "pretty": true,
+        "resolveJsonModule": true,
+        "listEmittedFiles": false,
+        "listFiles": false,
+
+        "rootDir": "./",
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./",
+        "skipLibCheck": true,
+        "traceResolution": false,
+        
+    },
+    
+    "exclude": [
+        "node_modules"
+    ],
+    
+    "include": ["./"]
+  
+  }
