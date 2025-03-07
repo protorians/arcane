@@ -1,6 +1,6 @@
 {
   "name": "@protorians/cli",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Protorians CLI",
   "type": "commonjs",
   "main": "build/bin/index.js",
