@@ -1,0 +1,11 @@
+{
+  "name": "Widget Icons",
+  "command": "widget:icons",
+  "description": "Widget Icons management",
+  "options": [
+    [
+      "--dump, -d",
+      "Dump icon from widgets.config.json"
+    ]
+  ]
+}
