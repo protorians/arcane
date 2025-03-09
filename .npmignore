@@ -1,7 +1,8 @@
 node_modules
-.idea/*
 .github
 source
+runes
+.idea
 .vscode
 *-lock.*
 *.lock
