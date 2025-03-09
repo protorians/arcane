@@ -1,7 +1,7 @@
 {
   "displayName": "Protorians:Arcane",
   "name": "@protorians/arcane",
-  "version": "0.0.6-beta.3",
+  "version": "0.0.7",
   "description": "Protorians Arcane",
   "type": "commonjs",
   "main": "build/bin/index.js",
