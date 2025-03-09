@@ -1,9 +1,11 @@
 node_modules
 .idea
-framework
+build
 .caches
 runes
 .vscode
 *-lock.*
 *.lock
 pnpm-lock.yaml
+runes.config.json
+rune.config.json

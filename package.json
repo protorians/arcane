@@ -1,12 +1,15 @@
 {
   "displayName": "Protorians:Arcane",
   "name": "@protorians/arcane",
-  "version": "0.0.7",
+  "version": "0.0.8-beta.0",
   "description": "Protorians Arcane",
   "type": "commonjs",
   "main": "build/bin/index.js",
   "bin": {
-    "arcane": "build/bin/index.js"
+    "arcane": "build/bin/index.js",
+    "arcane-stack": "build/bin/index.js",
+    "arcane-rune": "build/bin/index.js",
+    "arcane-sdk": "build/bin/index.js"
   },
   "scripts": {
     "dev": "tsc --watch",
