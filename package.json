@@ -1,7 +1,7 @@
 {
   "displayName": "Protorians:Arcane",
   "name": "@protorians/arcane",
-  "version": "0.0.8-beta.0",
+  "version": "0.0.9",
   "description": "Protorians Arcane",
   "type": "module",
   "main": "build/bin/index.js",
@@ -13,8 +13,7 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "build": "npm run build:cjs",
-    "build:cjs": "tsc && ts-add-js-extension --dir=build",
+    "build": "rm -rf build && tsc && ts-add-js-extension --dir=build",
     "fix:cjs": "ts-add-js-extension --dir=build"
   },
   "keywords": [
@@ -39,6 +38,7 @@
     "cli-progress": "^3.12.0",
     "extract-zip": "^2.0.1",
     "fs": "0.0.1-security",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "@protorians/arcane-core": "workspace:*"
   }
 }
