@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "build": "rm -rf build && tsc && ts-add-js-extension --dir=build",
+    "build": "tsc && ts-add-js-extension --dir=build",
     "fix:cjs": "ts-add-js-extension --dir=build"
   },
   "keywords": [
