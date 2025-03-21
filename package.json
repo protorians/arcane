@@ -3,15 +3,14 @@
   "name": "@protorians/arcane",
   "version": "0.0.7",
   "description": "Protorians Arcane",
-  "type": "commonjs",
+  "type": "module",
   "main": "build/bin/index.js",
   "bin": {
     "arcane": "build/bin/index.js"
   },
   "scripts": {
     "dev": "tsc --watch",
-    "build": "npm run build:cjs",
-    "build:cjs": "tsc && ts-add-js-extension --dir=build",
+    "build": "tsc && ts-add-js-extension --dir=build",
     "fix:cjs": "ts-add-js-extension --dir=build"
   },
   "keywords": [
