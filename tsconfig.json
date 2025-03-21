@@ -1,10 +1,13 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "NodeNext",
     "target": "ESNext",
-    "moduleResolution": "node",
     "module": "NodeNext",
     "noEmit": false,
-    "outDir": "./build",
     "noImplicitAny": false,
     "allowJs": false,
     "removeComments": true,
@@ -14,8 +17,8 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "experimentalDecorators": true,
-    "esModuleInterop": false,
     "strict": true,
+    "outDir": "./build",
     "rootDir": "./source"
   },
   "exclude": [
