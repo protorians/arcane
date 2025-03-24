@@ -4,23 +4,23 @@ import {dirname, resolve} from "node:path";
 import * as fs from "node:fs";
 import {spawnSync} from "node:child_process";
 import {
-    ThreadManager,
-    ThreadRunes,
+    ArcaneManager,
+    ArcaneRunes,
     GithubDownloader,
-    ThreadDirectory,
-    ThreadConfig,
+    ArcaneDirectory,
+    ArcaneConfig,
     Terminal,
-    IRuneScheme, ThreadProgress, ThreadString, ThreadEnum, IRuneConfig, IRunePayloads
-} from "@protorians/thread-core";
+    IRuneScheme, ArcaneProgress, ArcaneString, ArcaneEnum, IRuneConfig, IRunePayloads, IPackage
+} from "@protorians/arcane-core";
 
 
 const appDir = dirname(dirname(__dirname));
-const make = ThreadManager.create();
-const argv = ThreadManager.serializeArgv(process.argv);
+const make = ArcaneManager.create();
+const argv = ArcaneManager.serializeArgv(process.argv);
 const clientDir = process.cwd();
 const runesDir = resolve(appDir, './runes');
 const cachesDir = resolve(appDir, './.caches');
-const pkg = ThreadManager.packageInfo(appDir);
+const pkg = ArcaneManager.packageInfo(appDir) as IPackage;
 const runesConfigFile = resolve(appDir, "runes.config.json");
 const runesConfigExists = fs.existsSync(runesConfigFile);
 
@@ -36,7 +36,7 @@ try {
         .description('Crafting available runes installed')
         .option("--silent, -s", "Disable logging",)
         .action((options) => {
-            ThreadRunes.dump(runesDir, runesConfigFile, options.S || false)
+            ArcaneRunes.dump(runesDir, runesConfigFile, options.S || false)
         })
 
     make
@@ -45,10 +45,10 @@ try {
         .description('Add rune')
         .argument("<string>", "Github repository name (owner/repository or owner/repository@version)")
         .action(async (rune: string) => {
-            const slug = ThreadString.slugify(rune)
+            const slug = ArcaneString.slugify(rune)
             const repository = new GithubDownloader.RepositoryDownloader(
                 rune,
-                ThreadDirectory.initialize(`${cachesDir}/runes`) || runesDir,
+                ArcaneDirectory.initialize(`${cachesDir}/runes`) || runesDir,
                 runesDir
             );
             repository.downloader.info(false);
@@ -76,7 +76,7 @@ try {
                 fs.renameSync(from, to)
             }
 
-            const spinner = await ThreadProgress.createSpinner(`Crafting ${rune}...`);
+            const spinner = await ArcaneProgress.createSpinner(`Crafting ${rune}...`);
             spinner.start()
             spinner.color = 'cyan'
 
@@ -84,13 +84,13 @@ try {
                 /**
                  * Validate here
                  */
-                const runeConfigFile = `${to}/${ThreadEnum.Rune.CONFIG_FILE}`
+                const runeConfigFile = `${to}/${ArcaneEnum.Rune.CONFIG_FILE}`
                 if (!fs.existsSync(runeConfigFile)) {
                     Terminal.Display.error('ERR', `No rune config ${rune} exists`, runeConfigFile)
                     return;
                 }
 
-                const runeConfig = new ThreadConfig.Loader<IRuneConfig>(runeConfigFile)
+                const runeConfig = new ArcaneConfig.Loader<IRuneConfig>(runeConfigFile)
                 if (!runeConfig.exists) {
                     Terminal.Display.error('ERR', `No rune config ${rune} exists`, runeConfigFile)
                     return;
@@ -119,11 +119,11 @@ try {
         .argument("<string>", "Github repository name (owner/repository or owner/repository@version)")
         .action(async (name) => {
 
-            const slug = ThreadString.slugify(name)
-            const config = new ThreadConfig.Loader<IRuneScheme>(runesConfigFile)
+            const slug = ArcaneString.slugify(name)
+            const config = new ArcaneConfig.Loader<IRuneScheme>(runesConfigFile)
             const runes = config.get('payload')
 
-            const spinner = await ThreadProgress.createSpinner(`Removing ${name}...`);
+            const spinner = await ArcaneProgress.createSpinner(`Removing ${name}...`);
             spinner.start()
             spinner.color = 'red'
 
@@ -167,7 +167,7 @@ try {
         make.parse(argv);
     } else if (runesConfigExists) {
         try {
-            const cmd = ThreadRunes.merge(make, runesDir, clientDir, ThreadRunes.read(runesConfigFile),)
+            const cmd = ArcaneRunes.merge(make, runesDir, clientDir, ArcaneRunes.read(runesConfigFile),)
             cmd.parse(argv)
         } catch (e) {
             Terminal.Display.error("ERR", e);
