@@ -32,8 +32,8 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@protorians/core": "workspace:",
-    "@protorians/arcane-core": "workspace:",
+    "@protorians/core": "0.2.2",
+    "@protorians/arcane-core": "0.0.7",
     "cli-progress": "^3.12.0",
     "extract-zip": "^2.0.1",
     "fs": "0.0.1-security",
