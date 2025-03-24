@@ -1,5 +1,14 @@
 # @protorians/arcane
 
+## 0.0.11
+
+### Patch Changes
+
+- Patching
+- Updated dependencies
+  - @protorians/arcane-core@0.0.10
+  - @protorians/core@0.2.5
+
 ## 0.0.10
 
 ### Patch Changes

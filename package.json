@@ -1,7 +1,7 @@
 {
   "displayName": "Protorians:Arcane",
   "name": "@protorians/arcane",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Protorians Arcane",
   "type": "module",
   "main": "build/bin/index.js",
@@ -32,8 +32,8 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@protorians/core": "0.2.4",
-    "@protorians/arcane-core": "0.0.9",
+    "@protorians/core": "workspace:",
+    "@protorians/arcane-core": "workspace:",
     "cli-progress": "^3.12.0",
     "extract-zip": "^2.0.1",
     "fs": "0.0.1-security",
