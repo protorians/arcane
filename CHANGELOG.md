@@ -1,5 +1,14 @@
 # @protorians/arcane
 
+## 0.0.22
+
+### Patch Changes
+
+- Up version to publish on NPMJS
+- Updated dependencies
+  - @protorians/arcane-core@0.1.2
+  - @protorians/core@0.3.1
+
 ## 0.0.21
 
 ### Patch Changes
