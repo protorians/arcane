@@ -1,5 +1,47 @@
 # @protorians/arcane
 
+## 0.2.0
+
+### Minor Changes
+
+- Refactoring
+
+### Patch Changes
+
+- Updated dependencies
+  - @protorians/arcane-core@0.3.0
+  - @protorians/core@0.6.0
+
+## 0.1.0
+
+### Minor Changes
+
+- Fix bugs and add features
+
+### Patch Changes
+
+- Updated dependencies
+  - @protorians/arcane-core@0.2.0
+  - @protorians/core@0.5.0
+
+## 0.0.26
+
+### Patch Changes
+
+- Sync Version and Dependancies
+- Updated dependencies
+  - @protorians/arcane-core@0.1.6
+  - @protorians/core@0.4.1
+
+## 0.0.25
+
+### Patch Changes
+
+- Sync versions
+- Updated dependencies
+  - @protorians/arcane-core@0.1.5
+  - @protorians/core@0.3.8
+
 ## 0.0.24
 
 ### Patch Changes
@@ -156,15 +198,3 @@
 - Updated dependencies
   - @protorians/arcane-core@0.1.0
   - @protorians/core@0.3.0
-
-## 1.0.0
-
-### Major Changes
-
-- d247435: Break change
-
-### Patch Changes
-
-- Updated dependencies [d247435]
-  - @protorians/arcane-core@1.0.0
-  - @protorians/core@1.0.0
